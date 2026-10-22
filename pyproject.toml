@@ -1,0 +1,17 @@
+[project]
+name = "qafila-margin"
+version = "1.0.0"
+description = "Qafila gross margin: a one-day data engineering project"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "duckdb>=1.4",
+    "polars>=1.30",
+    "pyarrow>=18",
+    "pandas>=2.2",
+    "dbt-core>=1.10",
+    "dbt-duckdb>=1.9",
+    "pyiceberg[sql-sqlite,pyarrow]>=0.12",
+]
+
+[tool.uv]
+package = false

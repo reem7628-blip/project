@@ -1,0 +1,9 @@
+# run.py sets QAFILA_DUCKDB to <warehouse>/qafila.duckdb before calling dbt.
+qafila_margin:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('QAFILA_DUCKDB', '../warehouse/qafila.duckdb') }}"
+      schema: main
+      threads: 4

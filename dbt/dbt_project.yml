@@ -1,0 +1,27 @@
+name: qafila_margin
+version: "1.0.0"
+profile: qafila_margin
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+# The only date allowed to be hard-coded (BRIEF rule 7): the first supplier week.
+vars:
+  margin_start_date: "2026-08-31"
+  riyadh_utc_offset_hours: 3
+
+models:
+  qafila_margin:
+    staging:
+      +schema: staging
+      +materialized: view
+    silver:
+      +schema: silver
+      +materialized: table
+    gold:
+      +schema: gold
+      +materialized: table
+    quality:
+      +schema: quality
+      +materialized: table

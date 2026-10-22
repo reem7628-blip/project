@@ -1,0 +1,15 @@
+# generated data and outputs: never commit them
+data/
+data_*/
+warehouse/
+*.duckdb
+*.duckdb.wal
+
+# environments and tool output
+.venv/
+__pycache__/
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/.user.yml
+logs/

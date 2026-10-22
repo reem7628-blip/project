@@ -1,0 +1,13 @@
+version: 2
+
+# Step 1 (run.py: ingest) lands these tables. Rename them here if yours are called something else.
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: orders
+      - name: order_items
+      - name: products
+      - name: stores
+      - name: supplier_prices
+        description: Every row of every suppliers/prices_*.csv file, with the file it came from.

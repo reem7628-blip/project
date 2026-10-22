@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: weekly_margin
+    description: "Grain: one row per iso_week x city x category with at least one counted order line."
+    columns:
+      - name: iso_week
+        tests: [not_null]
+      - name: lines
+        tests: [not_null]
+      - name: revenue_sar
+        tests: [not_null]

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_products
+    description: "One row per product. SKU trimmed."
+    columns:
+      - name: product_id
+        tests: [unique, not_null]
+      - name: sku
+        description: "Trimmed SKU. Must be unique, otherwise the SKU join in silver/gold would fan out."
+        tests: [unique, not_null]
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: order_date
+        tests: [not_null]
+  - name: stg_supplier_prices
+    columns:
+      - name: source_file
+        tests: [not_null]
